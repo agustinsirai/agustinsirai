@@ -1,0 +1,139 @@
+body{
+  margin: 0;
+  padding: 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #111;
+}
+
+h1{
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+.site-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 18px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(6px);
+}
+
+.site-title{
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #111;
+}
+
+.site-nav a{
+  margin-left: 14px;
+  text-decoration: none;
+  color: #111;
+  opacity: 0.9;
+}
+
+.site-nav a:hover{
+  text-decoration: underline;
+}
+
+.hero{
+  height: 100vh;
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-video{
+  max-width: 1200px;
+  width: 100%;
+  height: auto;
+}
+/* páginas internas */
+
+.page{
+  padding-top: 120px; /* espacio para el header fijo */
+}
+
+.page-inner{
+  max-width: 720px;
+  padding: 0 18px;
+}
+
+.page-title{
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+}
+.about-photo{
+  max-width: 260px;
+  width: 100%;
+  margin: 0 0 30px 0;
+  display: block;
+}
+.page a{
+  color: #111;
+  text-decoration: underline;
+}
+
+.page a:hover{
+  opacity: 0.7;
+}
+.works-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.works-list li{
+  margin: 0 0 12px 0;
+}
+
+.works-list a{
+  text-decoration: none;
+  color: #111;
+}
+
+.works-list a:hover{
+  text-decoration: underline;
+}
+.gallery{
+  margin-top: 40px;
+}
+
+.gallery img{
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 30px 0;
+  display: block;
+}
+.video-block{
+  margin: 60px 0 0 0;
+}
+
+.video-block video{
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Inventarios (solo esta página) ===== */
+
+.inventarios .video-block{
+  margin: 40px 0;
+}
+
+.inventarios .video-block video{
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+.inventarios .gallery img{
+  width: 100%;
+  display: block;
+  margin: 0 0 30px 0;
+}
