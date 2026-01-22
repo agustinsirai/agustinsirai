@@ -1,9 +1,10 @@
 body{
   margin: 0;
-  padding: 40px;
+  padding: 0;               /* importante para que en mobile no se rompa el ancho */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   background: #ffffff;
   color: #111;
+  overflow-x: hidden;       /* blindaje anti scroll horizontal */
 }
 
 h1{
@@ -11,15 +12,19 @@ h1{
   font-weight: 400;
   margin: 0;
 }
+
+/* ===== HEADER ===== */
+
 .site-header{
   position: fixed;
   top: 0; left: 0; right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 18px;
+  padding: 18px 40px;
   background: rgba(255,255,255,0.75);
   backdrop-filter: blur(6px);
+  z-index: 1000;            /* CLAVE: menú clickeable siempre */
 }
 
 .site-title{
@@ -40,19 +45,54 @@ h1{
   text-decoration: underline;
 }
 
+/* ===== HOME HERO ===== */
+
 .hero{
   height: 100vh;
-  padding-top: 70px;
+  padding-top: 70px;        /* deja lugar al header fijo */
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;               /* queda por debajo del header */
 }
+
 .hero-video{
-  max-width: 1200px;
+  display: block;
+}
+
+/* Desktop: mostrar solo horizontal */
+.hero-video--desktop{
   width: 100%;
+  max-width: 1200px;
   height: auto;
 }
-/* páginas internas */
+
+/* Mobile: oculto por defecto */
+.hero-video--mobile{
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .site-header{
+    padding: 18px 18px;
+  }
+
+  .hero-video--desktop{
+    display: none;
+  }
+
+  .hero-video--mobile{
+    display: block;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    object-fit: cover;
+  }
+}
+
+/* ===== páginas internas ===== */
 
 .page{
   padding-top: 120px; /* espacio para el header fijo */
@@ -60,7 +100,7 @@ h1{
 
 .page-inner{
   max-width: 720px;
-  padding: 0 18px;
+  padding: 0 40px;
 }
 
 .page-title{
@@ -68,12 +108,14 @@ h1{
   font-weight: 400;
   margin: 0 0 30px 0;
 }
+
 .about-photo{
   max-width: 260px;
   width: 100%;
   margin: 0 0 30px 0;
   display: block;
 }
+
 .page a{
   color: #111;
   text-decoration: underline;
@@ -82,6 +124,7 @@ h1{
 .page a:hover{
   opacity: 0.7;
 }
+
 .works-list{
   list-style: none;
   padding: 0;
@@ -100,6 +143,7 @@ h1{
 .works-list a:hover{
   text-decoration: underline;
 }
+
 .gallery{
   margin-top: 40px;
 }
@@ -110,6 +154,7 @@ h1{
   margin: 0 0 30px 0;
   display: block;
 }
+
 .video-block{
   margin: 60px 0 0 0;
 }
@@ -137,35 +182,10 @@ h1{
   display: block;
   margin: 0 0 30px 0;
 }
-/* HOME: videos desktop / mobile */
 
-.hero-desktop {
-  display: block;
-}
-
-.hero-mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-
-  .hero-desktop {
-    display: none;
-  }
-
-  .hero-mobile {
-    display: block;
-  }
-
-  .hero {
-    align-items: stretch;
-    justify-content: stretch;
-  }
-
-  .hero-video {
-    max-width: none;
-    width: 100%;
-    height: calc(100vh - 70px);
-    object-fit: cover;
+/* Mobile general padding páginas */
+@media (max-width: 768px){
+  .page-inner{
+    padding: 0 18px;
   }
 }
