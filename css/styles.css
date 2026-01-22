@@ -137,3 +137,35 @@ h1{
   display: block;
   margin: 0 0 30px 0;
 }
+/* HOME: videos desktop / mobile */
+
+.hero-desktop {
+  display: block;
+}
+
+.hero-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .hero-desktop {
+    display: none;
+  }
+
+  .hero-mobile {
+    display: block;
+  }
+
+  .hero {
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .hero-video {
+    max-width: none;
+    width: 100%;
+    height: calc(100vh - 70px);
+    object-fit: cover;
+  }
+}
