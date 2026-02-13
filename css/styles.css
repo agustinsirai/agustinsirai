@@ -189,3 +189,34 @@ h1{
     padding: 0 18px;
   }
 }
+/* Works layout */
+.works-layout{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Imagen controlada */
+.works-image{
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.works-image img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .works-layout{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .works-image{
+    margin-top: 30px;
+  }
+}
